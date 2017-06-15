@@ -5,7 +5,7 @@
  * phonebook.
  *
  * April 28, 2017
- * Risa Chan
+ * 
  */
 
 #include <fstream>
