@@ -1,0 +1,33 @@
+//Function to be added into BinaryTree header file to check if the tree is an AVL tree
+bool isAVL(struct node* root, int * height) {
+	//Empty tree
+if (root == NULL) {
+		return true; 
+	}
+ 
+	int leftHeight = 0; //height of left subtree
+	int rightHeight = 0; //height of right subtree
+	bool leftBalanced = false; //whether balanced on left side
+	bool rightBalanced = false; //whether balanced on right side
+            
+leftBalanced = isAVL(root->left, &leftHeight); //to check if balanced on left side
+	rightBalanced = isAVL(root-> right, &rightHeight); //to check if balanced on right side
+	
+if (leftHeight > rightHeight) {
+		*height = leftHeight + 1;
+	}
+	else {
+		*height = rightHeight + 1;
+	}
+	
+//if the difference between the sides in height is 2 or greater, it is not balanced
+	if ((leftHeight - rightHeight) >= 2) {	
+return false;
+}
+if (rightHeight - leftHeight) >= 2) {
+		return false;
+	}
+	
+//will return true if it is balanced on left and right side together
+	return leftBalanced && rightBalanced;
+}
