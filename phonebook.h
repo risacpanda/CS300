@@ -2,7 +2,7 @@
  * Phonebook header file
  *
  * April 28, 2017
- * Risa Chan
+ * 
  */
 
 #ifndef PHONEBOOK_H_
